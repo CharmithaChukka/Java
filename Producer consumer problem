@@ -1,0 +1,89 @@
+class Q
+{
+int n;
+boolean b=false;
+synchronized void get()
+{
+while(!b)
+{
+try
+{
+wait();
+}
+catch(InterruptedException e)
+{
+System.out.println(e);
+}
+}
+System.out.println("Got:"+n);
+b=false;
+notify();
+}
+synchronized void put(int n)
+{
+while(b)
+{
+try
+{
+wait();
+}
+catch(InterruptedException e)
+
+{
+System.out.println(e);
+}
+}
+this.n=n;
+System.out.println("Put:"+n);
+b=true;
+notify();
+}
+}
+class Producer implements Runnable
+{
+Thread t;
+Q q;
+Producer(Q q)
+{
+this.q=q;
+t=new Thread(this,"Producer");
+t.start();
+}
+public void run()
+{
+int i=1;
+while(i<=5)
+{
+q.put(i++);
+}
+}
+}
+class Consumer implements Runnable
+{
+Thread t;
+
+Q q; Consumer(Q q)
+{
+this.q=q;
+t=new Thread(this,"Consumer");
+t.start();
+}
+public void run()
+{
+int i=1;
+while(i<=5)
+{
+q.get();
+i++;
+}
+}
+}
+class PC
+{
+public static void main(String args[])
+{
+Q q=new Q();
+Producer p1=new Producer(q);
+Consumerc1=new Consumer(q);
+}
+}
