@@ -1,0 +1,44 @@
+//program to perform binary search
+import java.util.*;
+class BinarySearch
+{
+int binarySearch(int a[],int n,int ele)
+{
+int low=0,high=n-1,mid;
+while(low<=high)
+{
+mid=(low+high)/2;
+if(ele==a[mid])
+return mid;
+else if(ele>a[mid])
+low=mid+1;
+else
+high=mid-1;
+}
+return -1;
+}
+}
+
+class SearchDemo
+{
+public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+int a[]=new int[20];
+int n,i,pos,se;
+System.out.println("Enter size of array");
+n=sc.nextInt();
+System.out.println("enter elements");
+for(i=0;i<n;i++)
+{
+a[i]=sc.nextInt();
+}
+System.out.println("Enter searching element");
+se=sc.nextInt();
+BinarySearch bs=new BinarySearch();
+pos=bs.binarySearch(a,n,se);
+if(pos!=-1)
+System.out.println(se+" is found at position "+(pos+1));
+else
+System.out.println(se+" is not found");
+}
+}
