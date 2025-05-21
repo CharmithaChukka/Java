@@ -4,7 +4,13 @@ class Box
 double width, height, depth;
 double volume()
 {
-return width*height*depth;
+return width* height * depth;
+}
+void setDim(double w, double h, double d)
+{
+width=w;
+height=h;
+depth=d;
 }
 }
 class BoxDemo
@@ -14,18 +20,14 @@ public static void main(String args[])
 Box b1=new Box();
 Box b2=new Box();
 double vol;
-b1.width=10.25;
-b1.height=20.35;
-b1.depth=15.45;
-b2.width=3.45;
-b2.height=6.78;
-b2.depth=9.85;
+b1.setDim(2.35,4.65,6.78);
+b2.setDim(5.67, 7.89,8.97);
 vol=b1.volume();
 System.out.println(“Volume is “+vol);
 vol=b2.volume();
 System.out.println(“Volume is “+vol);
 }
-
+}
 Output - 
-Volume is 3223.908375
-Volume is 230.560935 
+Volume is 74.34854999999999
+Volume is 400.97469999999996
