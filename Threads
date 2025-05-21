@@ -1,0 +1,49 @@
+class NewThread implements Runnable
+{
+Thread t;
+String name;
+NewThread(String threadname)
+{
+name=threadname;
+t=new Thread(this,name);
+t.start();
+}
+public void run()
+{
+try
+{
+for(int i=5;i>0;i--)
+{
+if(t.getName().equals(“one”))
+{
+System.out.println(“Good morning”);
+Thread.sleep(1000);
+}
+
+if(t.getName().equals(“two”))
+{
+System.out.println(“Hello”);
+Thread.sleep(2000);
+}
+if(t.getName().equals(“three”))
+{
+System.out.println(“Welcome”);
+Thread.sleep(3000);
+}
+}
+}
+catch(InterruptedException e)
+{
+System.out.println(e);
+}
+}
+}
+classWeek9a
+{
+public static void main(String args[])
+{
+NewThread nt1=new NewThread("one");
+NewThread nt2=new NewThread("two");
+NewThread nt3=new NewThread("three");
+}
+}
