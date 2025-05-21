@@ -1,0 +1,23 @@
+
+class Test
+{
+ void change(int i, int j)
+ {
+ i*=2;
+ j/=2;
+ }
+}
+class CallByValue
+{
+ public static void main(String args[])
+ {
+ Test t = new Test();
+ int a=10, b=20;
+ System.out.println(“Before method call: “+”a=”+a+” “+”b=”+b);
+ t.change(a,b);
+ System.out.println(“After method call: “+”a=”+a+” “+”b=”+b);
+ }
+}
+Output-
+Before method call: a=10 b=20  
+After method call: a=10 b=20
