@@ -1,0 +1,48 @@
+class NewThread implements Runnable
+{
+Thread t;
+NewThread()
+{
+t=new Thread(this,”Demo thread”):
+System.out.println(“ChildThread:“+t);
+t.start();
+}
+public void run()
+{
+try
+{
+for(int i=5;i>0;i--)
+{
+System.out.println(“Child Thread:“+i);
+Thread.sleep(500);
+}
+}
+catch(InterruptedException ie)
+{
+System.out.println(“Child Thread is interrupted”);
+}
+System.out.println(“Child thread is exiting”);
+}
+}
+
+class ThreadDemo
+{
+public static void main(String args[])
+{
+NewThread nt=new NewThread();
+try
+{
+
+for(int i=5;i>0;i--)
+{
+System.out.println(“Main Thread:“+i);
+Thread.sleep(1000);
+}
+}
+catch(InterruptedException ie)
+{
+System.out.println(“Main Thread is interrupted”);
+}
+System.out.println(“Main thread is exiting”);
+}
+}
