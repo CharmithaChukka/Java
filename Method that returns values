@@ -1,0 +1,31 @@
+
+class Box
+{
+double width, height, depth;
+double volume()
+{
+return width*height*depth;
+}
+}
+class BoxDemo
+{
+public static void main(String args[])
+{
+Box b1=new Box();
+Box b2=new Box();
+double vol;
+b1.width=10.25;
+b1.height=20.35;
+b1.depth=15.45;
+b2.width=3.45;
+b2.height=6.78;
+b2.depth=9.85;
+vol=b1.volume();
+System.out.println(“Volume is “+vol);
+vol=b2.volume();
+System.out.println(“Volume is “+vol);
+}
+
+Output - 
+Volume is 3223.908375
+Volume is 230.560935 
