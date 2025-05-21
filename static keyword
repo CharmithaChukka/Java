@@ -1,1 +1,33 @@
-
+class Box
+{
+double width, height, depth;
+Box(double w, double h, double d)
+{
+System.out.println(“Constructing Box ”);
+width=w;
+height=h;
+depth=d;
+}
+double volume()
+{
+return width*height*depth;
+}
+}
+class ConstructorDemo
+{
+public static void main(String args[])
+{
+Box b1=new Box(10.25,13.35,15.45);
+Box b2=new Box(23.45,34.56,56.78);
+double vol;
+vol=b1.volume();
+System.out.println(“Volume is “+vol);
+vol=b2.volume();
+System.out.println(“Volume is “+vol);
+}
+}
+output-
+Constructing Box
+Constructing Box
+Volume is 2075.8234375
+Volume is 45339.439674
