@@ -1,0 +1,19 @@
+class Demo
+{
+double width, height, depth;
+Demo (double width, double height, double depth)
+{
+this.width = width;
+this.height = height;
+this.depth = depth;
+}
+public static void main(String[] args) {
+Demo d = new Demo(10,20,30);
+System.out.println("width = "+d.width);
+System.out.println("height = "+d.height);
+System.out.println("depth = "+d.depth);
+}
+Output-
+width = 10.0  
+height = 20.0  
+depth = 30.0 
