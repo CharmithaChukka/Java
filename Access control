@@ -1,0 +1,78 @@
+A.java
+
+package p1;
+public class A
+{
+int a=1;
+private int b=2;
+protected int c=3;
+public int d=4;
+public A()
+{
+System.out.println(a+" "+b+""+c+" "+d);
+}
+}
+
+B.java
+package p1;
+class B extends A
+{
+B()
+{
+System.out.println(a+" "+c+" "+d);
+}
+}
+C.java
+package p1;
+class C
+{
+C()
+{
+A a1=new A();
+
+System.out.println(a1.a+" "+a1.c+""+a1.d);
+}
+}
+Demo.java
+package p1;
+class Demo
+
+{
+public static void main(String args[])
+{
+A a1=new A();
+B b1=new B();
+C c1=new C();
+}
+}
+D.java
+package p2;
+class D extends p1.A
+{
+D()
+{
+System.out.println(c+" "+d);
+}
+}
+E.java
+package p2;
+class E
+{
+E()
+{
+
+p1.A a1=new p1.A();
+System.out.println(a1.d);
+}
+}
+Demo1.java
+package p2;
+class Demo1
+
+{
+public static void main(String args[])
+{
+D d1=new D();
+E e1=new E();
+}
+}
