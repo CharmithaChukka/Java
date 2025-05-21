@@ -1,0 +1,38 @@
+class OverLoad
+{
+void display()
+{
+System.out.println(“No Parameters”);
+}
+void display(int a)
+{
+System.out.println(“a= “+a);
+}
+void display(int a, int b)
+{
+System.out.println(“a= “+a+” “+”b= “+b);
+}
+double display(double a)
+{
+System.out.println(“double a= “+a);
+return a*a;
+}
+}
+class OverLoadDemo
+{
+public static void main(String args[])
+{
+OverLoad ol=new OverLoad();
+ol.display();
+ol.display(10);
+ol.display(10,20);
+double result=ol.display(3.5);
+System.out.println(“Result= “+result);
+}
+}
+ouput-
+No Parameters
+a= 10
+a= 10 b= 20
+double a= 3.5
+Result= 12.25
