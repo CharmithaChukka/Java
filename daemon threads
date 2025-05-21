@@ -1,0 +1,33 @@
+class NewThread extends Thread
+{
+NewThread(String name)
+{
+super(name);
+}
+public void run()
+{
+if(Thread.currentThread().isDaemon())
+{
+System.out.println(getName()+"is Daemon thread");
+}
+else
+{
+System.out.println(getName()+"is User thread");
+}
+}
+}
+classWeek9c
+{
+public static void main(String args[])
+{
+NewThread nt1 = new NewThread("first thread");
+NewThread nt2=new NewThread("secondthread");
+NewThread nt3=new NewThread("thirdthread");
+nt1.setDaemon(true);
+nt1.start();
+nt2.start();
+nt3.setDaemon(true);
+
+nt3.start();
+}
+}
