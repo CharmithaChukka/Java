@@ -1,0 +1,23 @@
+//Program to check the string is palindrome or not import
+java.util.*;
+classPalindrome
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in); String
+s1=new String();
+System.out.println(“Enter a string”);
+s1=sc.next();
+String s2=new String();
+for(int i=s1.length()-1;i>=0;i--)
+{
+s2=s2+s1.charAt(i);
+}
+if(s1.equals(s2))
+System.out.println(“Givenstringispalindrome”);
+
+Else
+System.out.println(“Givenstringisnotapalindrome”);
+}
+
+}
